@@ -1,0 +1,72 @@
+#!/usr/bin/env zsh
+
+# hide folder in git repo
+function githide() {
+    rm -rf $1
+    git update-index --skip-worktree $(git ls-files $1)
+}
+function gitshowhide() {
+    git update-index --no-skip-worktree $(git ls-files $1)
+    git checkout $1
+}
+
+# format changed files
+function gitgofmt() {
+    git status --porcelain | sed -n '/\.go$/{s/^[^ ]\+//gp}' | xargs -tn1 gofmt -w
+}
+
+# wdn "go install -v <package>"
+function wdn() {
+    if [ "$WDN_TIMEOUT" = "" ]; then
+        echo set time out to 5 sec.
+        WDN_TIMEOUT=5
+    fi
+    while true; do
+        inotifywait -e close_write -r .
+        sleep $WDN_TIMEOUT
+        eval $1
+    done
+}
+
+function replaceinfolderloose() {
+    echo replace "${1}" to "${2}" in $(pwd)
+    _replaceinfoldergeneric $1 $1 $2
+}
+
+# surround source string by \b
+function replaceinfolderstrict() {
+    echo replace "${1}" to "${2}" in $(pwd)
+    local s=$(echo "\\\b$1\\\b")
+    _replaceinfoldergeneric $s $1 $2
+}
+
+function _replaceinfoldergeneric() {
+    src=$1
+    show=$2
+    dest=$3
+    local IFS=
+    while read -r line
+    do
+        echo -E $line | sed -n 's/'$src'/\x1b[43m'$show'\x1b[0m/p'
+        echo -E $line | sed -n 's/'$src'/\x1b[43m'$dest'\x1b[0m/p'
+    done <<< $(ag --case-sensitive $src)
+    read confirm"?Are you sure? [y/N] "
+    if ! [ "$confirm" = "y" ]; then
+        echo abort
+        return
+    fi
+    ag --case-sensitive $src | cut -d: -f1 | sort | uniq | xargs -n1 sed -i 's/'$src'/'$dest'/g'
+}
+
+# helper function to add item to PATH
+function add_path () {
+	if [ -z "$1" ]; then
+		echo no param specified!
+	fi
+
+	if [ -z "$PATH" ]; then
+		export PATH="$1"
+	else
+		PATH=$1:$PATH
+	fi
+}

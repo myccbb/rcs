@@ -1,0 +1,23 @@
+* Install
+
+#+BEGIN_SRC sh
+  # install oh-my-zsh
+  sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+  git clone https://github.com/cobbled/rcs .rcs
+  ln -s ~/.rcs/profile ~/.zprofile
+  ln -s ~/.rcs/zshrc ~/.zshrc
+  ln -s ~/.rcs/robbyrussell-modify.zsh-theme ~/.oh-my-zsh/themes/
+#+END_SRC
+
+
+* Import settings of iterm
+
+Iterm2 -> Preferences -> General
+
+At the bottom of the panel:
+
+=Load preferences from a custom folder or URL:=
+
+Click the =Browse= button at left and choose my iterm2 folder.
+
