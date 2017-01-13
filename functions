@@ -59,14 +59,25 @@ function _replaceinfoldergeneric() {
 }
 
 # helper function to add item to PATH
-function add_path () {
-	if [ -z "$1" ]; then
-		echo no param specified!
-	fi
+function addpathgeneric () {
+    if [ -z "$2" ]; then
+        echo Usage:
+        echo $0 PATH_VARIABLE_NAME path
+        echo $0 GOPATH ~/project/name
+    fi
 
-	if [ -z "$PATH" ]; then
-		export PATH="$1"
-	else
-		PATH=$1:$PATH
-	fi
+    local name=$1
+    local value=$(eval echo \$$name)
+
+    # delete extra : character
+    value=$(echo $value | sed -e "s/::*/:/g" -e "s/^:*//" -e "s/:*$//")
+
+    local pattern=$(echo :$2:)
+    local target=$(echo :$value:)
+
+    if [ -z "$value" ]; then
+        export eval $name="$2"
+    elif ! [[ "$target" == *"$pattern"* ]]; then
+        export eval $name=$2:$value
+    fi
 }
