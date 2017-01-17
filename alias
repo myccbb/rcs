@@ -14,7 +14,7 @@ alias bpy='bpython'
 
 alias e='emacs'
 alias en='emacs --no-window-system'
-alias ec='emacsclient'
+alias ec='emacsclient --tty'
 alias v='vi'
 
 alias ascdoc='asciidoctor'
