@@ -69,7 +69,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>370 273 796 473 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 80 1440 797 0 0 1440 877 </string>
+	<string>0 283 810 577 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 102 1440 775 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
@@ -308,7 +308,7 @@
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>No</string>
+			<string>Recycle</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>
@@ -1354,7 +1354,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>7FCD2E26-417F-4F19-AC40-54E20E371584</string>
 	<key>NoSyncLastTipTime</key>
-	<real>507004080.69484901</real>
+	<real>508038860.57118702</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1384,6 +1384,8 @@
 		<string>0011</string>
 		<string>0012</string>
 		<string>0013</string>
+		<string>0014</string>
+		<string>0015</string>
 	</array>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
@@ -1435,7 +1437,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-01-24T09:49:30Z</date>
+	<date>2017-02-04T01:53:53Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
