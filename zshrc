@@ -58,6 +58,15 @@ plugins=(git autojump)
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
+# detect gnu coreutils
+if [ -f /usr/local/opt/coreutils/libexec/gnubin/ls ]; then
+    # use gnu coreutils
+    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+
+    eval $(dircolors --sh)
+fi
+
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -87,3 +96,4 @@ source "$HOME"/.rcs/alias
 if [ -f "$HOME"/.custom.sh ]; then
     source "$HOME"/.custom.sh
 fi
+
