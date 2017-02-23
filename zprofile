@@ -14,6 +14,14 @@ fi
 addpath GTAGSLIBPATH '/usr/local/include'
 addpath GTAGSLIBPATH '/usr/include'
 
+# detect gnu coreutils
+if [ -f /usr/local/opt/coreutils/libexec/gnubin/ls ]; then
+    # use gnu coreutils
+    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+
+    eval $(dircolors --sh)
+fi
 
 # set GOPATH
 if [ -z "$GOPATH" ]; then
