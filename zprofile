@@ -1,36 +1,36 @@
 #!/usr/bin/zsh
 
+source "$HOME/.rcs/utils"
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
+    addpath PATH $HOME/bin
 fi
 
 ## user defined variable
 
 # set GTAGSLIBPATH
 # man global for details
-if [ -z "$GTAGSLIBPATH" ]; then
-    export GTAGSLIBPATH="/usr/include:/usr/local/include"
-else
-    export GTAGSLIBPATH="$GTAGSLIBPATH:/usr/include:/usr/local/include"
-fi
+addpath GTAGSLIBPATH '/usr/local/include'
+addpath GTAGSLIBPATH '/usr/include'
 
 
 # set GOPATH
 if [ -z "$GOPATH" ]; then
-    export GOPATH="$HOME/gohome"
-    PATH="$GOPATH/bin:$PATH"
+    addpath GOPATH $HOME/go
+    addpath PATH $GOPATH/bin
 fi
 
 # pyenv PATH
 if [ -f "$HOME/.pyenv/bin/pyenv" ]; then
-    export PYENV_ROOT="$HOME/.pyenv"
-    PATH="$PYENV_ROOT/bin:$PATH"
+    addpath PYENV_ROOT $HOME/.pyenv
+    addpath PATH $PYENV_ROOT/bin
+    eval "$(pyenv init -)"
 fi
 
 # cabal
 if [ -f "$HOME/.cabal" ]; then
-    PATH="$HOME/.cabal/bin:$PATH"
+    addpath PATH $HOME/.cabal/bin
 fi
 
 export DISABLE_AUTO_UPDATE="true"

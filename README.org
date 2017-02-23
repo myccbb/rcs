@@ -10,6 +10,12 @@
   ln -s ~/.rcs/robbyrussell-modify.zsh-theme ~/.oh-my-zsh/themes/
 #+END_SRC
 
+* Install pyenv
+
+#+BEGIN_SRC sh
+git clone --depth=1 https://github.com/yyuu/pyenv ~/.pyenv
+#+END_SRC
+
 
 * Import settings of iterm
 
@@ -17,7 +23,8 @@ Iterm2 -> Preferences -> General
 
 At the bottom of the panel:
 
-=Load preferences from a custom folder or URL:=
+Choose =Load preferences from a custom folder or URL:=
 
 Click the =Browse= button at left and choose my iterm2 folder.
 
+Choose =Save change to folder when iTerm2 quits.=

@@ -1,0 +1,17 @@
+#!/usr/bin/zsh
+
+# zsh does not have 'export -f'
+# so, source this file both in zprofile and zshrc
+
+# helper function to add item to PATH without repetition
+function addpath() {
+    if ! [ $# -eq 2 ]; then
+        echo invalid parameter number $#
+        return
+    fi
+    envname=$1
+    pathvalue=$(eval echo $2)
+    value=$(python ~/.rcs/path.py --addpath $envname $pathvalue)
+    export eval $envname=$value
+}
+

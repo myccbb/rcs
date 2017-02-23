@@ -117,20 +117,10 @@ if ! shopt -oq posix; then
 fi
 
 
-## yliu defined code
+## user defined code
 
 # set TERM for emacs --no-window-system
 export TERM=xterm-256color
-
-
-# enable virtualenvwrapper
-if [ workon &> /dev/null ] && [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
-
-venvwrapper_enable () {
-    source /usr/local/bin/virtualenvwrapper.sh
-}
 
 # load pyenv
 if [ -f "$HOME/.pyenv/bin/pyenv" ]; then

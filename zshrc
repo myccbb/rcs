@@ -79,9 +79,11 @@ source $ZSH/oh-my-zsh.sh
 
 
 ## user defined code
-source "$HOME"/.rcs/functions
+source "$HOME/.rcs/utils"
 
-source "$HOME"/.rcs/alias
+source "$HOME/.rcs/functions"
+
+source "$HOME/.rcs/alias"
 
 
 if [ -f "$HOME"/.custom.sh ]; then

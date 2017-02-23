@@ -58,26 +58,3 @@ function _replaceinfoldergeneric() {
     ag --case-sensitive $src | cut -d: -f1 | sort | uniq | xargs -n1 sed -i 's/'$src'/'$dest'/g'
 }
 
-# helper function to add item to PATH
-function addpathgeneric () {
-    if [ -z "$2" ]; then
-        echo Usage:
-        echo $0 PATH_VARIABLE_NAME path
-        echo $0 GOPATH ~/project/name
-    fi
-
-    local name=$1
-    local value=$(eval echo \$$name)
-
-    # delete extra : character
-    value=$(echo $value | sed -e "s/::*/:/g" -e "s/^:*//" -e "s/:*$//")
-
-    local pattern=$(echo :$2:)
-    local target=$(echo :$value:)
-
-    if [ -z "$value" ]; then
-        export eval $name="$2"
-    elif ! [[ "$target" == *"$pattern"* ]]; then
-        export eval $name=$2:$value
-    fi
-}
