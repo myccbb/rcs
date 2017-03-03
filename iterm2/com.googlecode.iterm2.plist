@@ -69,10 +69,12 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>293 276 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>370 234 796 473 0 0 1440 877 </string>
+	<string>640 334 796 473 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 102 1440 775 0 0 1440 877 </string>
+	<string>0 283 810 577 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
+	<string>0 102 1440 775 0 0 1440 877 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
 	<string>0 102 1440 775 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
@@ -1399,6 +1401,8 @@
 	<false/>
 	<key>OpenNoWindowsAtStartup</key>
 	<false/>
+	<key>PMPrintingExpandedStateForPrint2</key>
+	<false/>
 	<key>PasteTabToStringTabStopSize</key>
 	<integer>4</integer>
 	<key>PointerActions</key>
@@ -1436,6 +1440,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/liuyang/.rcs/iterm2</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -1445,7 +1451,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-02-14T11:44:05Z</date>
+	<date>2017-02-23T06:19:58Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -1461,7 +1467,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.13</string>
+	<string>3.0.14</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

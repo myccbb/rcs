@@ -5,7 +5,7 @@
   sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
   git clone https://github.com/cobbled/rcs .rcs
-  ln -s ~/.rcs/profile ~/.zprofile
+  ln -s ~/.rcs/zprofile ~/.zprofile
   ln -s ~/.rcs/zshrc ~/.zshrc
   ln -s ~/.rcs/robbyrussell-modify.zsh-theme ~/.oh-my-zsh/themes/
 #+END_SRC
@@ -13,6 +13,8 @@
 * Install pyenv
 
 #+BEGIN_SRC sh
+# pyenv build problems
+# https://github.com/yyuu/pyenv/wiki/Common-build-problems
 git clone --depth=1 https://github.com/yyuu/pyenv ~/.pyenv
 #+END_SRC
 

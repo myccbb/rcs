@@ -15,19 +15,6 @@ function gitgofmt() {
     git status --porcelain | sed -n '/\.go$/{s/^[^ ]\+//gp}' | xargs -tn1 gofmt -w
 }
 
-# wdn "go install -v <package>"
-function wdn() {
-    if [ "$WDN_TIMEOUT" = "" ]; then
-        echo set time out to 5 sec.
-        WDN_TIMEOUT=5
-    fi
-    while true; do
-        inotifywait -e close_write -r .
-        sleep $WDN_TIMEOUT
-        eval $1
-    done
-}
-
 function replaceinfolderloose() {
     echo replace "${1}" to "${2}" in $(pwd)
     _replaceinfoldergeneric $1 $1 $2
