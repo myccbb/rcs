@@ -8,6 +8,8 @@
   ln -s ~/.rcs/zprofile ~/.zprofile
   ln -s ~/.rcs/zshrc ~/.zshrc
   ln -s ~/.rcs/robbyrussell-modify.zsh-theme ~/.oh-my-zsh/themes/
+
+  ln -s ~/.rcs/npmrc ~/.npmrc
 #+END_SRC
 
 * Install pyenv
