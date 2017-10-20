@@ -8,6 +8,8 @@
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias cd='_cdls'
+
 alias py='python3'
 alias ipy='ipython3'
 alias bpy='bpython'

@@ -15,3 +15,8 @@ function addpath() {
     export eval $envname=$value
 }
 
+# ls after cd
+function _cdls() {
+    cd $1
+    ls .
+}
