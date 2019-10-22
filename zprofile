@@ -41,6 +41,11 @@ if [ -f "$HOME/.cabal" ]; then
     addpath PATH $HOME/.cabal/bin
 fi
 
+# cargo
+if [ -f "$HOME/.cargo/" ]; then
+    addpath PATH $HOME/.cargo/bin
+fi
+
 export DISABLE_AUTO_UPDATE="true"
 
 # colored GCC warnings and errors

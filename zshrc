@@ -101,6 +101,8 @@ source $ZSH/oh-my-zsh.sh
 
 
 ## user defined code
+source "$HOME/.rcs/envs"
+
 source "$HOME/.rcs/utils"
 
 source "$HOME/.rcs/functions"
