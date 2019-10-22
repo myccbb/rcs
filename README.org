@@ -12,7 +12,16 @@
   ln -s ~/.rcs/npmrc ~/.npmrc
 #+END_SRC
 
+* pip mirror config
+
+#+BEGIN_SRC sh
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+#+END_SRC
+
+
 * Install pyenv
+
+pyenv is not recommended since it is too slow.
 
 #+BEGIN_SRC sh
 # pyenv build problems
