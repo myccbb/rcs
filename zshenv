@@ -29,13 +29,12 @@ if [ -z "$GOPATH" ]; then
     addpath PATH $GOPATH/bin
 fi
 
-# pyenv is too slow
-## pyenv PATH
-#if [ -f "$HOME/.pyenv/bin/pyenv" ]; then
-#    addpath PYENV_ROOT $HOME/.pyenv
-#    addpath PATH $PYENV_ROOT/bin
-#    eval "$(pyenv init -)"
-#fi
+# pyenv PATH
+if [ -f "$HOME/.pyenv/bin/pyenv" ]; then
+    addpath PYENV_ROOT $HOME/.pyenv
+    addpath PATH $PYENV_ROOT/bin
+    eval "$(pyenv init -)"
+fi
 
 # cabal
 if [ -f "$HOME/.cabal" ]; then
@@ -54,6 +53,10 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 # set TERM for emacs --no-window-system
 export TERM=xterm-256color
+
+# rustup
+#RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
 
 # rust cargo
 export PATH="$HOME/.cargo/bin:$PATH"

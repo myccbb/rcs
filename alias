@@ -24,6 +24,7 @@ alias ascdoc='asciidoctor'
 alias rsync-git='rsync --exclude=".git"'
 alias rsync-gitignore='rsync --exclude=".git" --filter=":- .gitignore"'
 
+alias goproxy='GO111MODULE=on GOPROXY=https://goproxy.io'
 
 # Alias for git
 alias ga='git add --verbose'

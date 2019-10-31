@@ -5,7 +5,7 @@
   sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
   git clone https://github.com/cobbled/rcs .rcs
-  ln -s ~/.rcs/zprofile ~/.zprofile
+  ln -s ~/.rcs/zshenv ~/.zshenv
   ln -s ~/.rcs/zshrc ~/.zshrc
   ln -s ~/.rcs/robbyrussell-modify.zsh-theme ~/.oh-my-zsh/themes/
 
@@ -21,8 +21,6 @@ pip config set local.trusted-host mirrors.aliyun.com
 
 
 * Install pyenv
-
-pyenv is not recommended since it is too slow.
 
 #+BEGIN_SRC sh
 # pyenv build problems

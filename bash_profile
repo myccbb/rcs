@@ -1,1 +1,1 @@
-zprofile
+zshenv
