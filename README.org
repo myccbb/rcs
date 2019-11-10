@@ -28,6 +28,16 @@ pip config set local.trusted-host mirrors.aliyun.com
 git clone --depth=1 https://github.com/yyuu/pyenv ~/.pyenv
 #+END_SRC
 
+* crates.io mirror config
+#+BEGIN_SRC conf
+# add to $HOME/.cargo/config
+[source.crates-io]
+replace-with = 'ustc'
+
+[source.ustc]
+registry = "git://mirrors.ustc.edu.cn/crates.io-index"
+#+END_SRC
+
 
 * Import settings of iterm
 
