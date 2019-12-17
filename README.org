@@ -35,7 +35,12 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 git clone --depth=1 https://github.com/yyuu/pyenv ~/.pyenv
 #+END_SRC
 
-* crates.io mirror config
+* rust and crates.io mirror config
+
+http://mirrors.ustc.edu.cn/help/rust-static.html
+
+Replace https://sh.rustup.rs RUSTUP_UPDATE_ROOT value to https://mirrors.ustc.edu.cn/rust-static/rustup
+
 #+BEGIN_SRC conf
 # add to $HOME/.cargo/config
 [source.crates-io]
