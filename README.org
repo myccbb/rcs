@@ -4,7 +4,8 @@
   # install oh-my-zsh
   sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-  git clone https://github.com/cobbled/rcs .rcs
+  git clone https://github.com/cobbled/rcs rcs
+  ln -s $(pwd)/rcs ~/.rcs
   ln -s ~/.rcs/zshenv ~/.zshenv
   ln -s ~/.rcs/zshrc ~/.zshrc
   ln -s ~/.rcs/robbyrussell-modify.zsh-theme ~/.oh-my-zsh/themes/
@@ -17,6 +18,12 @@
 #+BEGIN_SRC sh
 pip config set global.index-url https://mirrors.aliyun.com/pypi/simple
 pip config set local.trusted-host mirrors.aliyun.com
+#+END_SRC
+
+* fzf fuzzy finder
+#+BEGIN_SRC sh
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install --no-key-bindings --completion --update-rc
 #+END_SRC
 
 
