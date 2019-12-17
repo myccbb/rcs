@@ -98,6 +98,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+if [[ -v ZSH_HIGHLIGHT_STYLES ]] then
+    ZSH_HIGHLIGHT_STYLES[globbing]='none'
+fi
 
 
 ## user defined code

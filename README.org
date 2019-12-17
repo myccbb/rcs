@@ -22,8 +22,17 @@ pip config set local.trusted-host mirrors.aliyun.com
 
 * fzf fuzzy finder
 #+BEGIN_SRC sh
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+git clone --depth=1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --no-key-bindings --completion --update-rc
+#+END_SRC
+
+* Install zsh plugins (autosuggestions completions syntax-highlighting)
+#+BEGIN_SRC sh
+git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone --depth=1 https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
+git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+# add zsh-autosuggestions zsh-completions zsh-syntax-highlighting to ~/.zshrc plugins variable
+# plugins=(... zsh-autosuggestions zsh-completions zsh-syntax-highlighting)
 #+END_SRC
 
 
