@@ -23,7 +23,7 @@ pip config set local.trusted-host mirrors.aliyun.com
 * fzf fuzzy finder
 #+BEGIN_SRC sh
 git clone --depth=1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install --no-key-bindings --completion --update-rc
+~/.fzf/install --key-bindings --completion --update-rc
 #+END_SRC
 
 * Install zsh plugins (autosuggestions completions syntax-highlighting)
