@@ -8,7 +8,7 @@
   ln -s $(pwd)/rcs ~/.rcs
   ln -s ~/.rcs/zshenv ~/.zshenv
   ln -s ~/.rcs/zshrc ~/.zshrc
-  ln -s ~/.rcs/robbyrussell-modify.zsh-theme ~/.oh-my-zsh/themes/
+  ln -s ~/.rcs/robbyrussell-modify.zsh-theme ~/.oh-my-zsh/custom/themes/
 
   ln -s ~/.rcs/npmrc ~/.npmrc
 #+END_SRC
