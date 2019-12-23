@@ -24,7 +24,12 @@ alias ascdoc='asciidoctor'
 alias rsync-git='rsync --exclude=".git"'
 alias rsync-gitignore='rsync --exclude=".git" --filter=":- .gitignore"'
 
-alias goproxy='GO111MODULE=on GOPROXY=https://goproxy.io'
+# gomod go get -v golang.org/x/tools/gopls@latest
+alias gomod='GO111MODULE=on GOPROXY=https://goproxy.io'
+# electronproxy npx create-electron-app --template=typescript tapp
+alias electronproxy='ELECTRON_MIRROR=https://cdn.npm.taobao.org/dist/electron/'
+# tselectronapp <appname>
+alias tselectronapp='electronproxy npx create-electron-app --template=typescript'
 
 # Alias for git
 alias ga='git add --verbose'
