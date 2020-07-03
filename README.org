@@ -75,3 +75,8 @@ Choose =Load preferences from a custom folder or URL:=
 Click the =Browse= button at left and choose my iterm2 folder.
 
 Choose =Save change to folder when iTerm2 quits.=
+
+
+* Windows terminal default config example
+
+[[https://github.com/microsoft/terminal/blob/master/src/cascadia/TerminalApp/defaults.json][src/cascadia/TerminalApp/defaults.json]]
