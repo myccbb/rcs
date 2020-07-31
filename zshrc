@@ -129,3 +129,4 @@ if [ -f "$HOME"/.custom.sh ]; then
     source "$HOME"/.custom.sh
 fi
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
