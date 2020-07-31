@@ -69,6 +69,18 @@ DISABLE_AUTO_UPDATE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
+if [[ -d $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]] then
+   plugins+=(zsh-autosuggestions)
+fi
+
+if [[ -d $HOME/.oh-my-zsh/custom/plugins/zsh-completions ]] then
+   plugins+=(zsh-completions)
+fi
+
+if [[ -d $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]] then
+   plugins+=(zsh-syntax-highlighting)
+fi
+
 # User configuration
 
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
