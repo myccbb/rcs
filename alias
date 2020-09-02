@@ -26,10 +26,18 @@ alias rsync-gitignore='rsync --exclude=".git" --filter=":- .gitignore"'
 
 # gomod go get -v golang.org/x/tools/gopls@latest
 alias gomod='GO111MODULE=on GOPROXY=https://goproxy.io'
+alias gomodget='gomod go get -u -v'
 # electronproxy npx create-electron-app --template=typescript tapp
 alias electronproxy='ELECTRON_MIRROR=https://cdn.npm.taobao.org/dist/electron/'
 # tselectronapp <appname>
 alias tselectronapp='electronproxy npx create-electron-app --template=typescript'
+
+# Alias for docker
+alias dkps='docker ps'
+alias dkpsa='docker ps -a'
+alias dkimg='docker images'
+alias dkrm='docker rm'
+
 
 # Alias for git
 alias ga='git add --verbose'
@@ -45,4 +53,3 @@ alias gdtm="git difftool --tool=meld"
 
 alias gig="go install -v --gcflags \"-N -l\""
 alias gbg="go build -v --gcflags \"-N -l\""
-
