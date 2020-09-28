@@ -1,14 +1,14 @@
 * Install
 
 #+BEGIN_SRC sh
-  # install oh-my-zsh
-  sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-  git clone https://github.com/cobbled/rcs rcs
-  ln -s $(pwd)/rcs ~/.rcs
-  ln -s ~/.rcs/zshenv ~/.zshenv
-  ln -s ~/.rcs/zshrc ~/.zshrc
-  ln -s ~/.rcs/robbyrussell-modify.zsh-theme ~/.oh-my-zsh/custom/themes/
+git clone https://github.com/cobbled/rcs rcs
+ln -s $(pwd)/rcs ~/.rcs
+ln -s ~/.rcs/zshenv ~/.zshenv
+ln -s ~/.rcs/zshrc ~/.zshrc
+ln -s ~/.rcs/robbyrussell-modify.zsh-theme ~/.oh-my-zsh/custom/themes/
 #+END_SRC
 
 * fzf fuzzy finder
@@ -96,6 +96,17 @@ Click the =Browse= button at left and choose my iterm2 folder.
 Choose =Save change to folder when iTerm2 quits.=
 
 
-* Windows terminal default config example
+* Windows terminal
+** recover "alt+enter" "alt+left" "alt+right" "alt+up" "alt+down" keybinding for org-mode
+#+BEGIN_SRC json
+"keybindings": [
+  {"command":null,"keys":["alt+enter"]},
+  {"command":null,"keys":["alt+left"]},
+  {"command":null,"keys":["alt+right"]},
+  {"command":null,"keys":["alt+up"]},
+  {"command":null,"keys":["alt+down"]},
+]
+#+END_SRC
 
+** default config example
 [[https://github.com/microsoft/terminal/blob/master/src/cascadia/TerminalApp/defaults.json][src/cascadia/TerminalApp/defaults.json]]

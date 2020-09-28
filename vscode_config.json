@@ -46,6 +46,11 @@
     // Add any keybinding overrides to this array.
     // To unbind a default keybinding, set the command to "unbound"
     "keybindings": [
+        {"command":null,"keys":["alt+enter"]},
+        {"command":null,"keys":["alt+left"]},
+        {"command":null,"keys":["alt+right"]},
+        {"command":null,"keys":["alt+up"]},
+        {"command":null,"keys":["alt+down"]},
         {"command":"nextTab","keys":["ctrl+pgdn"]},
         {"command":"prevTab","keys":["ctrl+pgup"]},
         {"command":"scrollDown", "keys":"shift+down"},
