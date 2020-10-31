@@ -97,6 +97,10 @@ Choose =Save change to folder when iTerm2 quits.=
 
 
 * Windows terminal
+** disable tab switcher
+#+BEGIN_SRC json
+"useTabSwitcher": false
+#+END_SRC
 ** recover "alt+enter" "alt+left" "alt+right" "alt+up" "alt+down" keybinding for org-mode
 #+BEGIN_SRC json
 "keybindings": [
