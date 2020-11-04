@@ -23,6 +23,9 @@ if [ -f /usr/local/opt/coreutils/libexec/gnubin/ls ]; then
     eval $(dircolors --sh)
 fi
 
+# add ~/.local/bin to PATH
+addpath PATH $HOME/.local/bin
+
 # set GOPATH
 if [ -z "$GOPATH" ]; then
     addpath GOPATH $HOME/go
