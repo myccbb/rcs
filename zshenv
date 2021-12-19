@@ -40,12 +40,12 @@ if [ -f "$HOME/.pyenv/bin/pyenv" ]; then
 fi
 
 # cabal
-if [ -f "$HOME/.cabal" ]; then
+if [ -d "$HOME/.cabal" ]; then
     addpath PATH $HOME/.cabal/bin
 fi
 
 # cargo
-if [ -f "$HOME/.cargo/" ]; then
+if [ -d "$HOME/.cargo" ]; then
     addpath PATH $HOME/.cargo/bin
 fi
 
@@ -58,8 +58,6 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 export TERM=xterm-256color
 
 # rustup
-#RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
-RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
+export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 
-# rust cargo
-export PATH="$HOME/.cargo/bin:$PATH"
