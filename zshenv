@@ -57,7 +57,3 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 # set TERM for emacs --no-window-system
 export TERM=xterm-256color
 
-# rustup
-export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
-export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
-
