@@ -45,3 +45,6 @@ function _replaceinfoldergeneric() {
     ag --case-sensitive $src | cut -d: -f1 | sort | uniq | xargs -n1 sed -i 's/'$src'/'$dest'/g'
 }
 
+function getwslhost() {
+    grep -E "^nameserver" /etc/resolv.conf | awk '{print $2}'
+}
