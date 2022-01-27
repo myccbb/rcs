@@ -48,6 +48,12 @@ alias gau='ga --update'
 alias gap='ga --patch'
 
 alias gcm='git commit -v -m'
+alias gca='git commit -v --amend --date=now'
+alias gcma='git commit -v --amend --date=now -m'
+
+alias glr='git pull --rebase'
+
+alias gpf='git push --force'
 
 alias gdc='git diff --cached'
 
