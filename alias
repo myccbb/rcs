@@ -54,6 +54,10 @@ alias gcma='git commit -v --amend --date=now -m'
 alias glr='git pull --rebase'
 
 alias gpf='git push --force'
+alias gpfgh='usewslproxy gpf gh'
+
+alias gfgh='usewslproxy gf gh'
+alias gpgh='usewslproxy gp gh'
 
 alias gdc='git diff --cached'
 
