@@ -4,15 +4,29 @@
 # so, source this file both in zprofile and zshrc
 
 # helper function to add item to PATH without repetition
-function addpath() {
+function addpath_old() {
     if ! [ $# -eq 2 ]; then
         echo invalid parameter number $#
         return
     fi
     envname=$1
     pathvalue=$(eval echo $2)
-    value=$(python ~/.rcs/path.py --addpath $envname $pathvalue)
+    value=$(/usr/bin/python ~/.rcs/path.py --addpath $envname $pathvalue)
     export eval $envname=$value
+}
+
+function addpath() {
+    if ! [ $# -eq 2 ]; then
+        echo invalid parameter number $#
+        return
+    fi
+    envname=$1
+    pathvalue=$(echo $2)
+    if [[ ":$PATH:" != *":$pathvalue:"* ]] then
+        export $envname=$pathvalue:$PATH
+    fi
+    #value=$(/usr/bin/python ~/.rcs/path.py --addpath $envname $pathvalue)
+    #export eval $envname=$value
 }
 
 # ls after cd
