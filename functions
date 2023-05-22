@@ -45,6 +45,14 @@ function _replaceinfoldergeneric() {
     ag --case-sensitive $src | cut -d: -f1 | sort | uniq | xargs -n1 sed -i 's/'$src'/'$dest'/g'
 }
 
+function get_wsl_host() {
+    if [ -n "$WSL_DISTRO_NAME" ]; then
+        grep -E "^nameserver" /etc/resolv.conf | awk '{print $2}'
+	return
+    fi
+    echo "127.0.0.1"
+}
+
 function get_auto_proxy_host() {
     if [ -n "$WSL_DISTRO_NAME" ]; then
         grep -E "^nameserver" /etc/resolv.conf | awk '{print $2}'

@@ -35,7 +35,7 @@ alias electronproxy='ELECTRON_MIRROR=https://cdn.npm.taobao.org/dist/electron/'
 alias tselectronapp='electronproxy npx create-electron-app --template=typescript'
 
 # usewslproxy set WSL_PROXY_PORT in custom.sh
-alias usewslproxy='http_proxy=http://$(getwslhost):${WSL_PROXY_PORT} https_proxy=http://$(getwslhost):${WSL_PROXY_PORT}'
+alias usewslproxy='http_proxy=http://$(get_wsl_host):${WSL_PROXY_PORT} https_proxy=http://$(get_wsl_host):${WSL_PROXY_PORT}'
 
 # useautoproxy set AUTO_PROXY_PORT in custom.sh
 alias useautoproxy='http_proxy=http://$(get_auto_proxy_host):${AUTO_PROXY_PORT} https_proxy=http://$(get_auto_proxy_host):${AUTO_PROXY_PORT}'
