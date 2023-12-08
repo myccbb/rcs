@@ -1,0 +1,33 @@
+[package]
+name = "center-daemon"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+axum = { version = "*", features = ["headers"] }
+axum-macros = "*"
+hyper = { version = "*", features = ["full"] }
+tokio = { version = "*", features = ["full"] }
+
+http = "*"
+
+tower = "*"
+tower-http = { version = "*", features = ["full"] }
+
+log = "*"
+
+tracing = "*"
+tracing-subscriber = { version = "*", features = ["default", "json"] }
+tracing-log = "*"
+
+serde = { version = "*", features = ["default", "derive"] }
+serde_json = { version = "*" }
+serde_repr = "*"
+
+clap = { version = "*", features = ["derive"] }
+toml = "*"
+
+
+futures = "*"

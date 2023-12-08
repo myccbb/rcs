@@ -1,0 +1,18 @@
+[package]
+name = "sqlite_macros"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+
+sqlite = { version = "*", path = "../sqlite" }
+
+syn = { version = "*", features = ["extra-traits"] }
+quote = { version = "*" }
+
+
+[dev-dependencies]
+chrono = { version = "*", features = ["serde"] }

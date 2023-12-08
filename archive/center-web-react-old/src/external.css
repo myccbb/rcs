@@ -1,0 +1,14 @@
+@import "./bulma.css";
+
+.total {
+    display: flex;
+    flex-direction: row;
+    margin: 100px;
+    border: solid crimson 1px;
+}
+
+.side-column {
+    margin: 10px;
+    width: 20%;
+    border: solid yellowgreen 1px;
+}

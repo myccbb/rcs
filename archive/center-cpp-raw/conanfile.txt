@@ -1,0 +1,12 @@
+[requires]
+protobuf/3.19.2
+catch2/2.13.8
+spdlog/1.9.2
+sqlite3/3.38.0
+fmt/8.1.1
+boost/1.78.0
+tl-expected/20190710
+nlohmann_json/3.10.5
+
+[generators]
+cmake

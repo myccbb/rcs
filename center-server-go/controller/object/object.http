@@ -1,0 +1,17 @@
+POST http://localhost:8080/center-server-go/api/v1/Object
+Content-Type: application/json
+
+{
+  "title": "Object",
+  "object_type_id": "asdf",
+  "content": "aaaaa"
+}
+
+###
+
+GET http://localhost:8080/center-server-go/api/v1/Object
+Content-Type: application/json
+
+{
+  "id": "111"
+}

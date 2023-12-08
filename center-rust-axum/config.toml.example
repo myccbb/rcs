@@ -1,0 +1,5 @@
+[auth]
+expire_hours = 24
+
+[db]
+db_name = "center.db3"

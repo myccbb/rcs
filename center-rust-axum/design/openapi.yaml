@@ -1,0 +1,34 @@
+openapi: "3.0.2"
+info:
+  title: Center Server API
+  version: "1.0"
+servers:
+  - url: https://sidereus.local
+tags:
+  - name: piece_type
+    description: "piece type"
+paths:
+  /center-server/api/v1/piece-type/list:
+    get:
+      tags:
+        - piece_type
+      responses:
+        "200":
+          description: OK
+components:
+  schemas:
+    PieceTypeInfo:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        create_time:
+          type: string
+          format: date-time
+        update_time:
+          type: string
+          format: date-time

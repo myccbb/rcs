@@ -1,0 +1,114 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/prisma_generated/center"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("CENTER_DATABASE_URL")
+}
+
+model collection_label_rel {
+  internal_id   BigInt   @id @default(autoincrement())
+  collection_id String   @db.VarChar(32)
+  label_id      String   @db.VarChar(64)
+  create_time   DateTime @db.DateTime(0)
+
+  @@unique([collection_id, label_id], map: "collection_label_uidx")
+  @@index([collection_id], map: "collection_idx")
+  @@index([label_id], map: "label_idx")
+}
+
+model collection_piece_rel {
+  internal_id   BigInt   @id @default(autoincrement())
+  collection_id String   @db.VarChar(32)
+  piece_id      String   @db.VarChar(32)
+  create_time   DateTime @db.DateTime(0)
+  update_time   DateTime @db.DateTime(0)
+
+  @@unique([collection_id, piece_id], map: "collection_piece_uidx")
+  @@index([collection_id], map: "collection_idx")
+  @@index([piece_id], map: "piece_idx")
+}
+
+model piece_label_rel {
+  internal_id BigInt   @id @default(autoincrement())
+  piece_id    String   @db.VarChar(32)
+  label_id    String   @db.VarChar(64)
+  create_time DateTime @db.DateTime(0)
+
+  @@unique([piece_id, label_id], map: "piece_label_uidx")
+  @@index([label_id], map: "label_idx")
+  @@index([piece_id], map: "piece_idx")
+}
+
+model collection {
+  internal_id BigInt   @id @default(autoincrement())
+  id          String   @unique(map: "id_uidx") @db.VarChar(32)
+  type_id     String   @db.VarChar(32)
+  title       String   @default("") @db.VarChar(64)
+  content     Json
+  create_time DateTime @db.DateTime(0)
+  update_time DateTime @db.DateTime(0)
+
+  @@index([type_id], map: "type_idx")
+}
+
+model label {
+  internal_id BigInt   @id @default(autoincrement())
+  id          String   @unique(map: "id_uidx") @db.VarChar(32)
+  name        String   @unique(map: "name_uidx") @db.VarChar(64)
+  parent_id   String   @db.VarChar(32)
+  extra       Json
+  create_time DateTime @db.DateTime(0)
+  update_time DateTime @db.DateTime(0)
+
+  @@index([parent_id], map: "parent_id_idx")
+}
+
+model object_type {
+  internal_id BigInt   @id @default(autoincrement())
+  id          String   @unique(map: "id_uidx") @db.VarChar(32)
+  name        String   @db.VarChar(32)
+  category    String   @db.VarChar(32)
+  create_time DateTime @db.DateTime(0)
+  update_time DateTime @db.DateTime(0)
+
+  @@unique([category, name], map: "category_name_uidx")
+}
+
+model piece {
+  internal_id BigInt   @id @default(autoincrement())
+  id          String   @unique(map: "id_uidx") @db.VarChar(32)
+  type_id     String   @db.VarChar(32)
+  title       String   @default("") @db.VarChar(64)
+  content     Json
+  create_time DateTime @db.DateTime(0)
+  update_time DateTime @db.DateTime(0)
+
+  @@index([type_id], map: "type_idx")
+}
+
+model collection_rel {
+  internal_id BigInt   @id @default(autoincrement())
+  parent_id   String   @db.VarChar(32)
+  sub_id      String   @db.VarChar(32)
+  create_time DateTime @db.DateTime(0)
+  update_time DateTime @db.DateTime(0)
+
+  @@unique([parent_id, sub_id], map: "rel_uidx")
+  @@index([parent_id], map: "parent_id_idx")
+  @@index([sub_id], map: "sub_id_idx")
+}
+
+model piece_rel {
+  internal_id BigInt   @id @default(autoincrement())
+  parent_id   String   @db.VarChar(32)
+  sub_id      String   @db.VarChar(32)
+  create_time DateTime @db.DateTime(0)
+  update_time DateTime @db.DateTime(0)
+
+  @@unique([parent_id, sub_id], map: "rel_uidx")
+  @@index([parent_id], map: "parent_id_idx")
+  @@index([sub_id], map: "sub_id_idx")
+}

@@ -1,0 +1,15 @@
+POST http://localhost:8080/center-server-go/api/v1/type
+Content-Type: application/json
+
+{
+  "id": "todo1",
+  "name": "todo1",
+  "category": "object"
+}
+
+###
+
+GET http://localhost:8080/center-server-go/api/v1/type
+Content-Type: application/json
+
+{}

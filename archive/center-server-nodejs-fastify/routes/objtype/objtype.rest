@@ -1,0 +1,12 @@
+POST http://localhost:3001/center/api/v1/objtype
+Content-Type: application/json
+
+{
+    "category": "piece",
+    "name": "note"
+}
+
+###
+
+GET http://localhost:3001/center/api/v1/objtype/list
+Content-Type: application/json

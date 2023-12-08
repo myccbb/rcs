@@ -1,0 +1,37 @@
+{
+  "name": "center",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.6.0",
+    "next": "14.0.2",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@prisma/client": "^5.6.0",
+    "@radix-ui/react-separator": "^1.0.3",
+    "@types/node": "^20.10.3",
+    "@types/react": "^18.2.41",
+    "@types/react-dom": "^18.2.17",
+    "autoprefixer": "^10.4.16",
+    "class-variance-authority": "^0.7.0",
+    "eslint": "^8.55.0",
+    "eslint-config-next": "14.0.2",
+    "lucide-react": "^0.292.0",
+    "postcss": "^8.4.32",
+    "prisma": "^5.6.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.1.0",
+    "tailwindcss": "^3.3.5",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5.3.2"
+  }
+}

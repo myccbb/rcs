@@ -1,0 +1,36 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model piece {
+  internal_id BigInt   @id @default(autoincrement())
+  id          String   @unique @db.VarChar(64)
+  user_id     String   @db.VarChar(64)
+  piece_type  String   @db.VarChar(64)
+  content     String   @db.Text
+  create_time DateTime @default(now()) @db.Timestamp(6)
+  update_time DateTime @updatedAt @db.Timestamp(6)
+
+  @@index(name: "user_id", fields: [user_id])
+}
+
+model piece_history {
+  internal_id BigInt   @id @default(autoincrement())
+  piece_id    String   @db.VarChar(64)
+  version_id  String   @db.VarChar(64)
+  user_id     String   @db.VarChar(64)
+  piece_type  String   @db.VarChar(64)
+  content     String   @db.Text
+  create_time DateTime @default(now()) @db.Timestamp(6)
+  update_time DateTime @updatedAt @db.Timestamp(6)
+
+  @@unique(name: "piece_version", fields: [piece_id, version_id])
+}

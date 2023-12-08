@@ -1,0 +1,11 @@
+cargo-features = ["codegen-backend"]
+
+[profile.dev]
+codegen-backend = "cranelift"
+
+
+[workspace]
+members = ["center", "sqlite", "sqlite_macros"]
+resolver = "2"
+
+

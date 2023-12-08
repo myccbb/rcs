@@ -1,0 +1,32 @@
+[package]
+name = "center"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tonic = "0"
+prost = "0"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+
+tracing = "0"
+tracing-subscriber = { version = "0", features = ["default", "json"] }
+tracing-log = "0"
+
+serde = { version = "1", features = ["default", "derive"] }
+serde_json = { version = "1" }
+serde_repr = "0"
+
+rusqlite = { version = "0" }
+
+clap = { version = "3", features = [ "derive" ] }
+toml = "0"
+
+ring = "0"
+data-encoding = "2"
+
+time = { version = "0", features = [ "serde-well-known" ]}
+
+[build-dependencies]
+tonic-build = "0"

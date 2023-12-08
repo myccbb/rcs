@@ -1,0 +1,19 @@
+{
+  "api": {
+    "host": "127.0.0.1",
+    "port": 50001
+  },
+  "deploy": {
+    "token": "hello deploy",
+    "project_base": "/home/ly/mybase",
+    "project_list": [
+      {
+        "project_name": "center-rust-axum",
+        "deploy_command": [
+          "cargo build --release",
+          "pm2 restart --name center-server ./target/release/center-server"
+        ]
+      }
+    ]
+  }
+}

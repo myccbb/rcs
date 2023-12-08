@@ -1,0 +1,8 @@
+services:
+  center-db:
+    image: "postgres:latest"
+    volumes:
+      - /home/ly/center-pg-data:/var/lib/postgresql/data/pgdata
+    environment:
+      POSTGRES_PASSWORD: 123
+      PGDATA: "/var/lib/postgresql/data/pgdata"

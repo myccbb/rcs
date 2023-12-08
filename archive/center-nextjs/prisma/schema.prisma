@@ -1,0 +1,67 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model label {
+  internal_id Int      @id @default(autoincrement())
+  create_time DateTime @default(now())
+  update_time DateTime @default(now()) @updatedAt
+  id          String   @unique
+  parent_id   String
+  name        String
+  extra       String
+
+  @@index(name: "label__parent_id", fields: [parent_id])
+  @@index(name: "label__name", fields: [name])
+}
+
+model object {
+  internal_id    Int      @id @default(autoincrement())
+  create_time    DateTime @default(now())
+  update_time    DateTime @default(now()) @updatedAt
+  id             String   @unique
+  object_type_id String
+  title          String
+  content        String
+
+  @@index(name: "object__object_type_id", fields: [object_type_id])
+}
+
+model object_rel {
+  internal_id Int      @id @default(autoincrement())
+  create_time DateTime @default(now())
+  update_time DateTime @default(now()) @updatedAt
+  parent_id   String
+  sub_id      String
+
+  @@unique(name: "object_rel__uniq_parent_sub", fields: [parent_id, sub_id])
+  @@index(name: "object_rel__parent_id", fields: [parent_id])
+  @@index(name: "object_rel__sub_id", fields: [sub_id])
+}
+
+model object_label_rel {
+  internal_id Int      @id @default(autoincrement())
+  create_time DateTime @default(now())
+  object_id   String
+  label_id    String
+
+  @@unique(name: "object_label_rel__uniq_object_label", fields: [object_id, label_id])
+  @@index(name: "object_label_rel__object_id", fields: [object_id])
+  @@index(name: "object_label_rel__label_id", fields: [label_id])
+}
+
+model object_type {
+  internal_id Int      @id @default(autoincrement())
+  create_time DateTime @default(now())
+  update_time DateTime @default(now()) @updatedAt
+  id          String   @unique
+  name        String   @unique
+}
