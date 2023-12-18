@@ -31,7 +31,37 @@ http://mirrors.ustc.edu.cn/help/rust-static.html
 
 Replace https://sh.rustup.rs RUSTUP_UPDATE_ROOT value to https://mirrors.ustc.edu.cn/rust-static/rustup
 
+#+BEGIN_SRC sh
+export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# install nightly channel
+rustup toolchain install nightly
+
+# set nightly as default toolchain
+rustup default nightly-x86_64-unknown-linux-gnu
+
+# install cranelift
+rustup component add rustc-codegen-cranelift-preview --toolchain nightly
+#+END_SRC
+
 #+BEGIN_SRC conf
+
+# install and use mold https://github.com/rui314/mold
+# add to add to $HOME/.cargo/config
+[target.x86_64-unknown-linux-gnu]
+rustflags = ["-C", "link-arg=-fuse-ld=$HOME/pkg/mold/bin/mold"]
+
+
+# install and use cranelift for debug build https://github.com/rust-lang/rustc_codegen_cranelift
+# add to $HOME/.cargo/config
+[unstable]
+codegen-backend = true
+
+[profile.dev]
+codegen-backend = "cranelift"
+
+
 # add to $HOME/.cargo/config
 [source.crates-io]
 replace-with = 'ustc'
