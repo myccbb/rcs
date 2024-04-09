@@ -11,7 +11,7 @@ function addpath_old() {
     fi
     envname=$1
     pathvalue=$(eval echo $2)
-    value=$(/usr/bin/python ~/.rcs/path.py --addpath $envname $pathvalue)
+    value=$(/usr/bin/python ~/.rcs/utils.py --addpath $envname $pathvalue)
     export eval $envname=$value
 }
 
@@ -25,8 +25,12 @@ function addpath() {
     if [[ ":$PATH:" != *":$pathvalue:"* ]] then
         export $envname=$pathvalue:$PATH
     fi
-    #value=$(/usr/bin/python ~/.rcs/path.py --addpath $envname $pathvalue)
+    #value=$(/usr/bin/python ~/.rcs/utils.py --addpath $envname $pathvalue)
     #export eval $envname=$value
+}
+
+function endless-run() {
+    /usr/bin/python ~/.rcs/utils.py --endless-run $@
 }
 
 # ls after cd

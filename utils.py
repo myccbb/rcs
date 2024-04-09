@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 from __future__ import print_function
-import os, sys
+import os, sys, signal
 
 def eprint(*args):
     print(*args, file=sys.stderr)
@@ -29,6 +29,15 @@ def addpath(envname, path):
         return path
     return remove_dup_path_item(path + ':' + os.getenv(envname))
 
+
+def ignore_handler():
+    pass
+
+def endless_run(cmd: str):
+    signal.signal(signal.SIGINT, ignore_handler)
+    while True:
+        os.system(cmd)
+
 if '__main__' == __name__:
     argv = sys.argv
     if len(argv) < 2:
@@ -40,3 +49,11 @@ if '__main__' == __name__:
             eprint('Usage:', argv[0], argv[1], '<env name> <path>')
             exit(1)
         print(addpath(argv[2], argv[3]))
+    elif argv[1] == '--endless-run':
+        if len(argv) < 3:
+            eprint('Usage:', argv[0], argv[1], '<cmd>')
+            exit(1)
+        endless_run(' '.join(argv[2:]))
+    else:
+        eprint('unknown command:', argv[1])
+        exit(1)
