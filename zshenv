@@ -61,6 +61,3 @@ if [ -f "$HOME/.cargo/env" ]; then
     . "$HOME/.cargo/env"
 fi
 
-if [ -f "$HOME/.rye/env" ]; then
-    . "$HOME/.rye/env"
-fi

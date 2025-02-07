@@ -130,6 +130,10 @@ if [ -f "$HOME"/.custom.sh ]; then
     source "$HOME"/.custom.sh
 fi
 
+zle -N my_accept_line
+
+bindkey "^M" my_accept_line
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # zprof
