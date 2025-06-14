@@ -39,7 +39,7 @@ DISABLE_AUTO_UPDATE="true"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -125,6 +125,13 @@ source "$HOME/.rcs/functions"
 
 source "$HOME/.rcs/alias"
 
+precmd() {
+    print -Pn "\e]0;%m:%~\a"
+}
+
+preexec() {
+    print -Pn "\e]0;$1\a"
+}
 
 if [ -f "$HOME"/.custom.sh ]; then
     source "$HOME"/.custom.sh
