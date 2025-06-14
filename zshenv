@@ -49,6 +49,13 @@ if [ -d "$HOME/.cargo" ]; then
     addpath PATH $HOME/.cargo/bin
 fi
 
+# android sdk
+if [ -d "$HOME/pkg/android" ]; then
+    addpath ANDROID_HOME $HOME/pkg/android
+    addpath PATH $HOME/pkg/android/cmdline-tools/latest/bin
+    addpath PATH $HOME/pkg/android/platform-tools
+fi
+
 export DISABLE_AUTO_UPDATE="true"
 
 # colored GCC warnings and errors
