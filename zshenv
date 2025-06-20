@@ -56,6 +56,8 @@ if [ -d "$HOME/pkg/android" ]; then
     addpath PATH $HOME/pkg/android/platform-tools
 fi
 
+export EDITOR="vi"
+
 export DISABLE_AUTO_UPDATE="true"
 
 # colored GCC warnings and errors
