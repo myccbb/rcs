@@ -48,13 +48,13 @@ rustup component add rustc-codegen-cranelift-preview --toolchain nightly
 #+BEGIN_SRC conf
 
 # install and use mold https://github.com/rui314/mold
-# add to add to $HOME/.cargo/config
+# add to add to $HOME/.cargo/config.toml
 [target.x86_64-unknown-linux-gnu]
 rustflags = ["-C", "link-arg=-fuse-ld=$HOME/pkg/mold/bin/mold"]
 
 
 # install and use cranelift for debug build https://github.com/rust-lang/rustc_codegen_cranelift
-# add to $HOME/.cargo/config
+# add to $HOME/.cargo/config.toml
 [unstable]
 codegen-backend = true
 
@@ -62,7 +62,7 @@ codegen-backend = true
 codegen-backend = "cranelift"
 
 
-# add to $HOME/.cargo/config
+# add to $HOME/.cargo/config.toml
 [source.crates-io]
 replace-with = 'ustc'
 
