@@ -4,7 +4,7 @@
 # install oh-my-zsh
 git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 
-git clone https://github.com/cobbled/rcs rcs
+git clone https://github.com/myccbb/rcs rcs
 ln -s $(pwd)/rcs ~/.rcs
 ln -s ~/.rcs/zshenv ~/.zshenv
 ln -s ~/.rcs/zshrc ~/.zshrc

@@ -70,15 +70,16 @@ DISABLE_AUTO_TITLE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-if [[ -d $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]] then
+if [[ -d $HOME/.oh-my-zsh/custom/plugins/zsh-completions ]]; then
+   #plugins+=(zsh-completions)
+   fpath+=($HOME/.oh-my-zsh/custom/plugins/zsh-completions/src)
+fi
+
+if [[ -d $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]]; then
    plugins+=(zsh-autosuggestions)
 fi
 
-if [[ -d $HOME/.oh-my-zsh/custom/plugins/zsh-completions ]] then
-   plugins+=(zsh-completions)
-fi
-
-if [[ -d $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]] then
+if [[ -d $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]]; then
    plugins+=(zsh-syntax-highlighting)
 fi
 
@@ -111,7 +112,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-if [[ -v ZSH_HIGHLIGHT_STYLES ]] then
+if [[ -v ZSH_HIGHLIGHT_STYLES ]]; then
     ZSH_HIGHLIGHT_STYLES[globbing]='none'
 fi
 
